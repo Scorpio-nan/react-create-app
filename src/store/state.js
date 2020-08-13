@@ -1,7 +1,5 @@
-export const userInfoState = {
-    userName:"",
-    userState:false,
+export default {
+    userInfo:{},
+    isLogin:false,
+    webSiteConfig:[]
 }
-
-export const isLogin = false;
-export const webSiteState = {}

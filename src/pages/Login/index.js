@@ -6,8 +6,7 @@ class Login extends Component{
 
     render(){
         const {isLogin, location , login} = this.props;
-        alert(isLogin);
-
+        
         // 拿到 PrivatePage 上给路由扩展的参数, 点击登录 登录成功之后需要重定向到登录之前的页面;
         const { redirect = '/' } = location.state || {};
         if(isLogin){

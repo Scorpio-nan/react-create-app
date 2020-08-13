@@ -1,30 +1,16 @@
-import * as status from './state';
-import * as types from './action';
+import { combineReducers } from 'redux';
+import states from './state';
+import * as types from './types';
 
-export default {
-    userInfo(state = { ...status.userInfoState },action){
+export default combineReducers({
+    webSiteConfig(state = states.webSiteConfig,action){
         switch(action.type){
-            case types.ISLOGIN:
-                return {
-                    ...status.userInfoState,
-                    userState: !state.userState
-                }
+            case types.WEBSITECONFIG:
+                return action.data;
             default:
                 return state;
         }
-    },
-    webSiteConfig(state = { ...status.webSiteState },action){
-        switch(action.type){
-            case "incorment":
-                console.log(action)
-                return {
-                    userState:true
-                }
-            default:
-                return state;
-        }
-    },
-    isLogin(state =  status.isLogin, action){
-        return state;
     }
-}
+})
+
+
